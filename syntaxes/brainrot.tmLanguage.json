@@ -1,0 +1,32 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Brain Rot",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.brainrot",
+				"match": "\\b(byAnyChance|whenItsNot|cutThisShit|touchGrass)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.brainrot",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.brainrot",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.rot"
+}

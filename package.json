@@ -1,0 +1,25 @@
+{
+  "name": "brain-rot-syntax",
+  "displayName": "Brain-Rot Syntax",
+  "description": "The Official VScode Extension for Brain-Rot Syntax Highlighting",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "brainrot",
+      "aliases": ["Brain Rot", "brainrot"],
+      "extensions": [".rot",".bpy"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "brainrot",
+      "scopeName": "source.rot",
+      "path": "./syntaxes/brainrot.tmLanguage.json"
+    }]
+  }
+}
