@@ -1,32 +1,52 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Brain Rot",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.brainrot",
-				"match": "\\b(byAnyChance|whenItsNot|cutThisShit|touchGrass)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.brainrot",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.brainrot",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "source.rot"
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Brain Rot",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#functions"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [{
+                "name": "comment.line.brainrot",
+                "match": "--.*"
+            }]
+        },
+        "keywords": {
+            "patterns": [{
+                "name": "keyword.control.brainrot",
+                "match": "\\b(byAnyChance|whenItsNot|cutThisShit|touchGrass)\\b"
+            }]
+        },
+        "strings": {
+            "patterns": [{
+                "name": "string.quoted.double.brainrot",
+                "begin": "\"",
+                "end": "\"",
+                "patterns": [
+                    {
+                        "name": "constant.character.escape.brainrot",
+                        "match": "\\\\."
+                    }
+                ]
+            }]
+        },
+        "functions": {
+            "patterns": [{
+                "name": "support.function.freespeech.brainrot",
+                "match": "\\bfreespeech\\b"
+            }]
+        }
+    },
+    "scopeName": "source.rot"
 }
