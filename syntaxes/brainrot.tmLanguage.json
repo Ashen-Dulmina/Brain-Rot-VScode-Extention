@@ -30,7 +30,7 @@
             "include": "#floats"
         },
         {
-            "include": "#operators"
+            "include": "#math-operations"
         }
     ],
     "repository": {
@@ -91,15 +91,15 @@
             "patterns": [
                 {
                     "name": "constant.language.boolean.nocap.brainrot",
-                    "match": "\\bTrue\\b"
+                    "match": "\\bNOCAP\\b"
                 },
                 {
                     "name": "constant.language.boolean.cap.brainrot",
-                    "match": "\\bFalse\\b"
+                    "match": "\\bCAP\\b"
                 },
                 {
                     "name": "constant.language.nothing.brainrot",
-                    "match": "\\bNone\\b"
+                    "match": "\\bNOTHING\\b"
                 }
             ]
         },
@@ -107,7 +107,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.builtin.brainrot",
-                    "match": "\\bfreespeech\\s*\\|\\|\\s*\".*?\"\\b"
+                    "match": "\\bfreespeech\\s*\\|\\|"
                 }
             ]
         },
@@ -141,7 +141,7 @@
                 }
             ]
         },
-        "operators": {
+        "math-operations": {
             "patterns": [
                 {
                     "name": "keyword.operator.add.brainrot",

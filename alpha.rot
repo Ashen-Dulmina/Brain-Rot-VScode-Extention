@@ -10,7 +10,7 @@ make a be NOCAP
 make b be CAP
 make c be NOTHING
 make d be 7 pluS 7
-make e be 21 dividE 3
+make e be 21 dividE 4
 
 
 freespeech||"Hello World!"
