@@ -2,51 +2,153 @@
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
     "name": "Brain Rot",
     "patterns": [
-        {
-            "include": "#comments"
-        },
-        {
-            "include": "#keywords"
-        },
-        {
-            "include": "#strings"
-        },
-        {
-            "include": "#functions"
-        }
+      {
+        "include": "#comments"
+      },
+      {
+        "include": "#functions"
+      },
+      {
+        "include": "#keywords"
+      },
+      {
+        "include": "#print"
+      },
+      {
+        "include": "#variables"
+      },
+      {
+        "include": "#math_operations"
+      },
+      {
+        "include": "#strings"
+      }
     ],
     "repository": {
-        "comments": {
-            "patterns": [{
-                "name": "comment.line.brainrot",
-                "match": "--.*"
-            }]
-        },
-        "keywords": {
-            "patterns": [{
-                "name": "keyword.control.brainrot",
-                "match": "\\b(byAnyChance|whenItsNot|cutThisShit|touchGrass)\\b"
-            }]
-        },
-        "strings": {
-            "patterns": [{
+      "comments": {
+        "patterns": [
+          {
+            "name": "comment.line.brainrot",
+            "match": "--.*"
+          }
+        ]
+      },
+      "functions": {
+        "patterns": [
+          {
+            "name": "entity.name.function.brainrot",
+            "begin": "\\b(mindset)\\b\\s+(\\w+)\\[\\]\\s*\\(", 
+            "beginCaptures": {
+              "1": {
+                "name": "keyword.control.function.brainrot"
+              },
+              "2": {
+                "name": "entity.name.function.brainrot"
+              }
+            },
+            "end": "\\)", 
+            "patterns": [
+              {
+                "include": "#strings"
+              },
+              {
+                "include": "#comments"
+              }
+            ]
+          }
+        ]
+      },
+      "keywords": {
+        "patterns": [
+          {
+            "name": "keyword.control.brainrot",
+            "match": "\\b(byAnyChance|whenItsNot|cutThisShit|touchGrass)\\b"
+          }
+        ]
+      },
+      "print": {
+        "patterns": [
+          {
+            "name": "keyword.print.brainrot",
+            "begin": "\\b(freespeech)\\b\\|\\s*\"", 
+            "beginCaptures": {
+              "1": {
+                "name": "keyword.control.print.brainrot"
+              }
+            },
+            "end": "\"", 
+            "patterns": [
+              {
                 "name": "string.quoted.double.brainrot",
-                "begin": "\"",
-                "end": "\"",
-                "patterns": [
-                    {
-                        "name": "constant.character.escape.brainrot",
-                        "match": "\\\\."
-                    }
-                ]
-            }]
-        },
-        "functions": {
-            "patterns": [{
-                "name": "support.function.freespeech.brainrot",
-                "match": "\\bfreespeech\\b"
-            }]
-        }
+                "match": "[^\"]+"
+              }
+            ]
+          }
+        ]
+      },
+      "variables": {
+        "patterns": [
+          {
+            "name": "variable.declaration.brainrot",
+            "begin": "\\b(make)\\b\\s+(\\w+)\\s+be\\s+",
+            "beginCaptures": {
+              "1": {
+                "name": "keyword.control.variable.brainrot"
+              },
+              "2": {
+                "name": "variable.name.brainrot"
+              }
+            },
+            "end": "\\b", 
+            "patterns": [
+              {
+                "include": "#math_operations"
+              },
+              {
+                "include": "#strings"
+              }
+            ]
+          }
+        ]
+      },
+      "math_operations": {
+        "patterns": [
+          {
+            "name": "math.operation.brainrot",
+            "match": "\\d+\\s*(pluS|minuS|multiplY|dividE)\\s*\\d+",
+            "captures": {
+              "0": {
+                "name": "math.operation.brainrot"
+              }
+            }
+          },
+          {
+            "name": "math.operation.brainrot",
+            "match": "\\d+\\s*(pluS|minuS|multiplY|dividE)\\s*(\\d+\\s*(pluS|minuS|multiplY|dividE)\\s*)*\\d+",
+            "captures": {
+              "0": {
+                "name": "math.operation.brainrot"
+              }
+            }
+          }
+        ]
+      },
+      "strings": {
+        "patterns": [
+          {
+            "name": "string.quoted.double.brainrot",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+              {
+                "name": "constant.character.escape.brainrot",
+                "match": "\\\\."
+              }
+            ]
+          }
+        ]
+      }
     },
     "scopeName": "source.rot"
-}
+  }
+  
