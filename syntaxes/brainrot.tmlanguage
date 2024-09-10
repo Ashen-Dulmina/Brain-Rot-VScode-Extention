@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+  <dict>
+    <key>name</key>
+    <string>Brain Rot</string>
+    <key>scopeName</key>
+    <string>source.rot</string>
+    <key>patterns</key>
+    <array>
+      <dict>
+        <key>include</key>
+        <string>#comments</string>
+      </dict>
+      <dict>
+        <key>include</key>
+        <string>#keywords</string>
+      </dict>
+      <dict>
+        <key>include</key>
+        <string>#strings</string>
+      </dict>
+    </array>
+    <key>repository</key>
+    <dict>
+      <!-- Comment patterns -->
+      <key>comments</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>comment.line.brainrot</string>
+            <key>match</key>
+            <string>--.*</string>
+          </dict>
+        </array>
+      </dict>
+      
+      <!-- Keywords patterns -->
+      <key>keywords</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.brainrot</string>
+            <key>match</key>
+            <string>\b(byAnyChance|whenItsNot|cutThisShit|touchGrass)\b</string>
+          </dict>
+        </array>
+      </dict>
+
+      <!-- String patterns -->
+      <key>strings</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>string.quoted.double.brainrot</string>
+            <key>begin</key>
+            <string>"</string>
+            <key>end</key>
+            <string>"</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>name</key>
+                <string>constant.character.escape.brainrot</string>
+                <key>match</key>
+                <string>\\.</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+    </dict>
+  </dict>
+</plist>
