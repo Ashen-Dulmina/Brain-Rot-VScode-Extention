@@ -19,7 +19,7 @@
     "grammars": [{
       "language": "brainrot",
       "scopeName": "source.rot",
-      "path": "./syntaxes/brainrot.tmLanguage.json"
+      "path": "./syntaxes/brainrot.tmLanguage"
     }]
   }
 }
