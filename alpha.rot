@@ -1,0 +1,35 @@
+--This is the official example script for Brain-Rot.
+--This file is only used for tests and for better understanding of the coding structure.
+--Clear the pre-written code and "Start Cooking!".
+--\credits : @Ashen-Dulmina, @Infroid-Coder.
+
+
+make y be 1 
+make z be 0.5 
+make a be NOCAP 
+make b be CAP
+make c be NOTHING
+make d be 7 pluS 7
+make e be 21 dividE 3
+
+
+freespeech||"Hello World!"
+freespeech||1
+freespeech||x
+freespeech||e
+
+mindset Main[] (
+  freespeech||"This is the main Function"
+)
+
+mindset notMain[] (
+  freespeech||"This is the main Function"
+)
+
+byAnyChance [a iz NOCAP](
+  activity Main[]
+)  [a iz CAP](
+  activity notMain[]
+) whenItsNot(
+  freespeech||"neither"
+)

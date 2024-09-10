@@ -12,40 +12,154 @@
             "include": "#strings"
         },
         {
+            "include": "#make"
+        },
+        {
+            "include": "#boolean"
+        },
+        {
+            "include": "#builtins"
+        },
+        {
             "include": "#functions"
+        },
+        {
+            "include": "#integers"
+        },
+        {
+            "include": "#floats"
+        },
+        {
+            "include": "#operators"
         }
     ],
     "repository": {
         "comments": {
-            "patterns": [{
-                "name": "comment.line.brainrot",
-                "match": "--.*"
-            }]
+            "patterns": [
+                {
+                    "begin": "--",
+                    "end": "\\n",
+                    "name": "comment.line.double-dash.brainrot"
+                }
+            ]
         },
         "keywords": {
-            "patterns": [{
-                "name": "keyword.control.brainrot",
-                "match": "\\b(byAnyChance|whenItsNot|cutThisShit|touchGrass)\\b"
-            }]
+            "patterns": [
+                {
+                    "name": "keyword.control.brainrot",
+                    "match": "\\b(byAnyChance|whenItsNot|ifNotByAnyChance|cutThisShit|touchGrass)\\b"
+                },
+                {
+                    "name": "keyword.control.mindset.brainrot",
+                    "match": "\\bmindset\\b"
+                }
+            ]
         },
         "strings": {
-            "patterns": [{
-                "name": "string.quoted.double.brainrot",
-                "begin": "\"",
-                "end": "\"",
-                "patterns": [
-                    {
-                        "name": "constant.character.escape.brainrot",
-                        "match": "\\\\."
+            "patterns": [
+                {
+                    "name": "string.quoted.double.brainrot",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.brainrot",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "make": {
+            "patterns": [
+                {
+                    "begin": "\\bmake\\b\\s+(\\w+)\\s+be\\s+(\\w+)",
+                    "end": "\\b",
+                    "name": "keyword.control.make.brainrot",
+                    "captures": {
+                        "1": {
+                            "name": "variable.name.brainrot"
+                        },
+                        "2": {
+                            "name": "constant.language.value.brainrot"
+                        }
                     }
-                ]
-            }]
+                }
+            ]
+        },
+        "boolean": {
+            "patterns": [
+                {
+                    "name": "constant.language.boolean.nocap.brainrot",
+                    "match": "\\bTrue\\b"
+                },
+                {
+                    "name": "constant.language.boolean.cap.brainrot",
+                    "match": "\\bFalse\\b"
+                },
+                {
+                    "name": "constant.language.nothing.brainrot",
+                    "match": "\\bNone\\b"
+                }
+            ]
+        },
+        "builtins": {
+            "patterns": [
+                {
+                    "name": "keyword.control.builtin.brainrot",
+                    "match": "\\bfreespeech\\s*\\|\\|\\s*\".*?\"\\b"
+                }
+            ]
         },
         "functions": {
-            "patterns": [{
-                "name": "support.function.freespeech.brainrot",
-                "match": "\\bfreespeech\\b"
-            }]
+            "patterns": [
+                {
+                    "begin": "\\bmindset\\b\\s+\\w+\\[\\]",
+                    "end": "\\b",
+                    "name": "keyword.control.function.brainrot",
+                    "captures": {
+                        "0": {
+                            "name": "entity.name.function.brainrot"
+                        }
+                    }
+                }
+            ]
+        },
+        "integers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.integer.brainrot",
+                    "match": "\\b\\d+\\b"
+                }
+            ]
+        },
+        "floats": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.float.brainrot",
+                    "match": "\\b\\d+\\.\\d+\\b"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.add.brainrot",
+                    "match": "\\bpluS\\b"
+                },
+                {
+                    "name": "keyword.operator.subtract.brainrot",
+                    "match": "\\bminuS\\b"
+                },
+                {
+                    "name": "keyword.operator.multiply.brainrot",
+                    "match": "\\bmultiplY\\b"
+                },
+                {
+                    "name": "keyword.operator.divide.brainrot",
+                    "match": "\\bdividE\\b"
+                }
+            ]
         }
     },
     "scopeName": "source.rot"

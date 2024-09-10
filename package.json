@@ -20,6 +20,17 @@
       "language": "brainrot",
       "scopeName": "source.rot",
       "path": "./syntaxes/brainrot.tmLanguage.json"
-    }]
+    }],
+    "configurationDefaults": {
+      "editor.insertSpaces": false,
+      "editor.tokenColorCustomizations" :{
+        "textMateRules": [{
+          "scope" : "keyword.operator.add.brainrot",
+          "settings": {
+            "foreground": "#ff0000"
+          }
+        }]
+      } 
+    }
   }
 }
