@@ -63,7 +63,7 @@
     "functions": {
       "patterns": [
         {
-          "name": "support.function.brainrot",
+          "name": "freespeech.function.brainrot",
           "match": "\\b(freespeech\\|\\|)\\b"
         },
         {
