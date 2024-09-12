@@ -1,7 +1,7 @@
 {
   "name": "brain-rot-syntax",
   "displayName": "Brain-Rot Syntax",
-  "description": "The Official VScode Extension for Brain-Rot Syntax Highlighting",
+  "description": "The Official VSCode Extension for Brain-Rot Syntax Highlighting",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.93.0"
@@ -10,37 +10,52 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "brainrot",
-      "aliases": ["Brain Rot", "brainrot"],
-      "extensions": [".rot", ".bpy"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "brainrot",
-      "scopeName": "source.rot",
-      "path": "./syntaxes/brainrot.tmLanguage.json"
-    }],
+    "languages": [
+      {
+        "id": "brainrot",
+        "aliases": ["Brain Rot", "brainrot"],
+        "extensions": [".rot"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "brainrot",
+        "scopeName": "source.brainrot",
+        "path": "./syntaxes/brainrot.tmLanguage.json"
+      }
+    ],
     "configurationDefaults": {
-      "editor.insertSpaces": false,
       "editor.tokenColorCustomizations": {
         "textMateRules": [
           {
-            "scope": "keyword.operator.brainrot",
+            "scope": "keyword.control.brainrot",
             "settings": {
-              "foreground": "#1100ff"
+              "foreground": "#FF4500"
             }
           },
           {
             "scope": "constant.language.boolean.brainrot",
             "settings": {
-              "foreground": "#ff0000"
+              "foreground": "#FF0000"
             }
           },
           {
-            "scope": "freespeech.function.brainrot",
+            "scope": "support.function.brainrot",
             "settings": {
-              "foreground": "#00ff0d"
+              "foreground": "#00FF00"
+            }
+          },
+          {
+            "scope": "keyword.operator.brainrot",
+            "settings": {
+              "foreground": "#0000FF"
+            }
+          },
+          {
+            "scope": "variable.other.brainrot",
+            "settings": {
+              "foreground": "#FFA500"
             }
           }
         ]
