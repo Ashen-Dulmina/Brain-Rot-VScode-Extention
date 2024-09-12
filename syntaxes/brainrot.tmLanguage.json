@@ -7,7 +7,10 @@
       "include": "#comments"
     },
     {
-      "include": "#keywords"
+      "include": "#controlKeywords"
+    },
+    {
+      "include": "#otherKeywords"
     },
     {
       "include": "#booleans"
@@ -35,11 +38,19 @@
         }
       ]
     },
-    "keywords": {
+    "controlKeywords": {
       "patterns": [
         {
           "name": "keyword.control.brainrot",
-          "match": "\\b(byAnyChance|ifNotByAnyChance|whenItsNot|activity|make)\\b"
+          "match": "\\b(byAnyChance|ifNotByAnyChance|whenItsNot)\\b"
+        }
+      ]
+    },
+    "otherKeywords": {
+      "patterns": [
+        {
+          "name": "keyword.other.brainrot",
+          "match": "\\b(activity|make)\\b"
         }
       ]
     },
@@ -78,23 +89,23 @@
       "patterns": [
         {
           "name": "support.function.brainrot",
-          "begin": "\\bfreespeech\\|\\|",
+          "begin": "\\bfreespeech",
+          "end": "\\|\\|",
+          "patterns": [
+            {
+              "name": "keyword.operator.brainrot",
+              "match": "\\|\\|"
+            }
+          ]
+        },
+        {
+          "name": "support.function.brainrot",
+          "begin": "\\|\\|",
           "end": "$",
           "patterns": [
             {
               "name": "string.quoted.double.brainrot",
               "match": "\"[^\"]*\""
-            }
-          ]
-        },
-        {
-          "name": "entity.name.function.brainrot",
-          "begin": "\\bmindset",
-          "end": "\\(",
-          "patterns": [
-            {
-              "name": "variable.language.brainrot",
-              "match": "\\w+"
             }
           ]
         }
