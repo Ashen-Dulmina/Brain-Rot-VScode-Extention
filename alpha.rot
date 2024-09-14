@@ -13,7 +13,7 @@ make d be 7 pluS 7
 make e be 21 dividE 4
 
 
-freespeech||"Hello World!"
+freespeech|| "Hello World!"
 freespeech||1
 freespeech||x
 freespeech||e

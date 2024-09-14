@@ -89,18 +89,7 @@
       "patterns": [
         {
           "name": "support.function.brainrot",
-          "begin": "\\bfreespeech",
-          "end": "\\|\\|",
-          "patterns": [
-            {
-              "name": "keyword.operator.brainrot",
-              "match": "\\|\\|"
-            }
-          ]
-        },
-        {
-          "name": "support.function.brainrot",
-          "begin": "\\|\\|",
+          "begin": "\\bfreespeech\\s*\\|\\s*\\|",
           "end": "$",
           "patterns": [
             {
