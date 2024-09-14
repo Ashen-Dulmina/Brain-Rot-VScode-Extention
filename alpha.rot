@@ -3,17 +3,17 @@
 --Clear the pre-written code and "Start Cooking!".
 --\credits : @Ashen-Dulmina, @Infroid-Coder.
 
-make x be "Legends Never Die.."
+
 make y be 1 
 make z be 0.5 
 make a be NOCAP 
 make b be CAP
 make c be NOTHING
 make d be 7 pluS 7
-make e be 21 dividE 3
+make e be 21 dividE 4
 
 
-freespeech||"Hello World!"
+freespeech|| "Hello World!"
 freespeech||1
 freespeech||x
 freespeech||e
@@ -28,7 +28,7 @@ mindset notMain[] (
 
 byAnyChance [a iz NOCAP](
   activity Main[]
-) ifNotByAnyChance [a iz CAP](
+)  [a iz CAP](
   activity notMain[]
 ) whenItsNot(
   freespeech||"neither"
