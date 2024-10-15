@@ -50,7 +50,7 @@
       "patterns": [
         {
           "name": "keyword.other.brainrot",
-          "match": "\\b(activity|make)\\b"
+          "match": "\\b(activity|make|be)\\b"
         }
       ]
     },
@@ -67,6 +67,14 @@
         {
           "name": "keyword.operator.brainrot",
           "match": "\\b(pluS|minuS|multiplY|dividE)\\b"
+        },
+        {
+          "name": "constant.numeric.float.brainrot",
+          "match": "-?\\b\\d+(\\.\\d+)?\\b"   
+        },
+        {
+          "name": "constant.numeric.integer.brainrot",
+          "match": "-?\\b\\d+\\b"            
         }
       ]
     },
@@ -76,12 +84,16 @@
           "name": "string.quoted.double.brainrot",
           "begin": "\"",
           "end": "\"",
-          "patterns": [
-            {
-              "name": "constant.character.escape.brainrot",
-              "match": "\\\\."
+          "contentName": "string.quoted.double.brainrot"
+        },
+        {
+          "name": "support.function.brainrot",
+          "match": "\\bfreespeech\\s*\\|\\|",
+          "captures": {
+            "1": {
+              "name": "string.quoted.double.brainrot"
             }
-          ]
+          }
         }
       ]
     },
@@ -89,12 +101,31 @@
       "patterns": [
         {
           "name": "support.function.brainrot",
-          "begin": "\\bfreespeech\\s*\\|\\s*\\|",
+          "begin": "\\bfreespeech\\s*\\|\\|",
           "end": "$",
           "patterns": [
             {
-              "name": "string.quoted.double.brainrot",
-              "match": "\"[^\"]*\""
+              "name": "keyword.other.brainrot",
+              "match": "\\bfreespeech\\s*\\|\\|"
+            },
+            {
+              "name": "constant.numeric.integer.brainrot",
+              "match": "\\b\\d+\\b"
+            },
+            {
+              "name": "variable.other.brainrot",
+              "match": "\\b\\w+\\b"
+            }
+          ]
+        },
+        {
+          "name": "entity.name.function.brainrot",
+          "begin": "\\bmindset",
+          "end": "\\[\\]",
+          "patterns": [
+            {
+              "name": "variable.language.brainrot",
+              "match": "\\w+"
             }
           ]
         }
@@ -104,7 +135,13 @@
       "patterns": [
         {
           "name": "variable.other.brainrot",
-          "match": "\\bmake\\s+\\w+\\s+be\\b"
+          "match": "\\bmake\\s+\\w+\\s+be\\s+(\\d+)\\b",
+          "captures": {
+            "1": {
+              "name": "constant.numeric.integer.brainrot"
+            }
+          },
+          "contentName": "variable.other.brainrot"
         }
       ]
     }

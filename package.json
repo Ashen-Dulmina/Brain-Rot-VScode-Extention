@@ -57,6 +57,34 @@
             "settings": {
               "foreground": "#FFA500"
             }
+          },
+          {
+            "scope" : "constant.numeric.integer.brainrot",
+            "settings": {
+              "foreground": "#cc00ff",
+              "fontStyle": "bold"
+            }
+          },
+          {
+            "scope": "string.quoted.double.brainrot",
+            "settings": {
+              "foreground": "#7533078f",
+              "fontStyle": "bold"
+            }
+          },
+          {
+            "scope": "constant.numeric.float.brainrot",
+            "settings": {
+              "foreground": "#cc00ff",
+              "fontStyle": "bold"
+            }
+          },
+          {
+            "scope": "keyword.other.brainrot",
+            "settings": {
+              "foreground": "#b866668c",
+              "fontStyle": "bold"
+            }
           }
         ]
       }

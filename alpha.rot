@@ -13,9 +13,9 @@ make d be 7 pluS 7
 make e be 21 dividE 4
 
 
-freespeech|| "Hello World!"
-freespeech||1
-freespeech||x
+freespeech||  "Hello World!"
+freespeech||
+freespeech|| c
 freespeech||e
 
 mindset Main[] (
@@ -26,10 +26,10 @@ mindset notMain[] (
   freespeech||"This is the main Function"
 )
 
-byAnyChance [a iz NOCAP](
+byAnyChance [ a iz NOCAP](
   activity Main[]
 )  [a iz CAP](
   activity notMain[]
 ) whenItsNot(
-  freespeech||"neither"
+  freespeech|| 
 )
